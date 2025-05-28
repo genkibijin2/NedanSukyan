@@ -1,0 +1,11 @@
+' Peter Holmes Consulting HB++ UserControl file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin UserControl
+  Name = UserControl1
+  Segment = main
+  DefaultWidth = 30
+  DefaultHeight = 30
+  ToolboxIcon = ""
+end
