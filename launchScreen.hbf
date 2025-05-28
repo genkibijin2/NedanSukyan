@@ -1,0 +1,497 @@
+' Peter Holmes Consulting HB++ Form file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin Form
+  Name = launchScreen
+  Segment = main
+  Extends = Form
+  Left = 0
+  Top = 0
+  Width = 160
+  Height = 160
+  DIA = 0
+  Modal = False
+  SaveBehind = False
+  Caption = "NedanSukyan v1"
+  Help = ""
+  Locked = False
+  begin Graffiti
+    Name = Graffiti1
+    Left = 150
+    Top = 149
+    Anchors = 0
+    Tag = ""
+  end
+  begin Picture
+    Name = mimiHeader
+    Left = 0
+    Top = 15
+    Anchors = 0
+    Visible = True
+    Image = "HeaderMimiLauncher"
+    Tag = ""
+  end
+  begin Label
+    Name = topLabel
+    Left = 110
+    Top = 1
+    Anchors = 0
+    Visible = True
+    Caption = "© GenkiBijin"
+    Font = "Standard"
+    Tag = ""
+  end
+  begin Label
+    Name = Label1
+    Left = 7
+    Top = 51
+    Anchors = 0
+    Visible = True
+    Caption = "• Select a supplier:"
+    Font = "LargeBold"
+    Tag = ""
+  end
+  begin Label
+    Name = PageNumber
+    Left = 62
+    Top = 147
+    Anchors = 0
+    Visible = True
+    Caption = "­Page 0­"
+    Font = "Standard"
+    Tag = ""
+  end
+  begin Picture
+    Name = rightArrowButton
+    Left = 99
+    Top = 148
+    Anchors = 0
+    Visible = True
+    Image = "pageArrowRight"
+    Tag = ""
+  end
+  begin Picture
+    Name = leftArrowButton
+    Left = 49
+    Top = 148
+    Anchors = 0
+    Visible = True
+    Image = "pageArrowLeft"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon1
+    Left = 8
+    Top = 68
+    Anchors = 0
+    Visible = True
+    Image = "IconAvantek"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon2
+    Left = 8
+    Top = 93
+    Anchors = 0
+    Visible = True
+    Image = "IconBevelPane"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon3
+    Left = 8
+    Top = 118
+    Anchors = 0
+    Visible = True
+    Image = "IconCarlF"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon4
+    Left = 131
+    Top = 68
+    Anchors = 0
+    Visible = True
+    Image = "IconCotswold"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon5
+    Left = 131
+    Top = 93
+    Anchors = 0
+    Visible = True
+    Image = "IconDGS"
+    Tag = ""
+  end
+  begin Picture
+    Name = Icon6
+    Left = 131
+    Top = 118
+    Anchors = 0
+    Visible = True
+    Image = "IconDistinctionDoors"
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName1
+    Left = 33
+    Top = 67
+    Width = 44
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName4
+    Left = 83
+    Top = 67
+    Width = 43
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName2
+    Left = 33
+    Top = 92
+    Width = 44
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName3
+    Left = 33
+    Top = 117
+    Width = 44
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName5
+    Left = 83
+    Top = 92
+    Width = 43
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Field
+    Name = supplierName6
+    Left = 83
+    Top = 117
+    Width = 43
+    Height = 23
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = ""
+    Tag = ""
+  end
+  begin Button
+    Name = aboutButton
+    Left = 137
+    Top = 54
+    Width = 11
+    Height = 9
+    Anchors = 0
+    Visible = True
+    Text = "?"
+    Font = "Standard"
+    Frame = 1
+    Repeating = False
+    Tag = ""
+  end
+end
+Private Sub Form_Load()
+	'//--Check if null (aka first boot), if not retain page number--\\
+	If NOT (currentPage = 1 OR currentPage = 2 OR  currentPage = 3) Then
+		currentPage = 1
+	End if
+	selectedCompanyID = 1
+	PageNumber.Caption = "­Page " & CStr(currentPage) & "­"
+	refreshSupplierPage
+End Sub
+
+'\\--End of Launch--//
+
+'//--Company ID Reference List--\\
+'Avantek = 1										|
+'Bevelpane = 2									|
+'Carl F = 3									  	|
+'Cotswold = 4										|
+'DGS = 5												|
+'Distinction Doors = 6					|
+'ERA (Fab & Fix) = 7						|
+'Exitex = 8											|
+'Liniar = 9											|
+'Maco = 10									    |
+'NW Metal = 11									|
+'ODL = 12												|
+'Premier Arches = 13						|
+'Rapidrop = 14									|
+'Rehau = 15									  	|
+'Window Ware = 16								|
+'Window Widgets = 17						|
+'Press Glass = 18								|
+'\\--Company ID Reference List--//
+
+'Page reference
+'Note: Since each of the icons for clicking the price lists will be re-usable, call an if for the page number each time they are pressed
+'For example: if button1 is clicked but page number is 3, open [page 3 slot 1 company]
+
+
+'//--Typewriter Sub Routine for slowoutput--\\
+
+'Private Sub Button1_Click()
+	'Dim userInput As String 'What did the user type in to the graffiti box
+	'Dim stackOfChars As String 'The output which is constructed by sticking chars together.
+	'Dim howManyCharsToLoop As Integer 'Length of the input which determines how many loops happen
+	'Dim looper As Integer
+	'userInput = InputBox.Text
+	'howManyCharsToLoop = Len(userInput)
+	'For looper = 1 To howManyCharsToLoop
+		'stackOfChars = Left(userInput, looper)
+		'Sleep(70)
+		'outPutBox.Text = stackOfChars
+	'Next looper
+'End Sub
+
+'//--TEST--================================================================================================\\
+'Private Sub mimiHeader_PenDown(ByVal x As Integer, ByVal y As Integer) 'For testing, delete after use			'|
+'	Let mimiHeader.Visible = false																																					'|
+'	Let mimiHeaderSmall.Visible = true																																			'|
+'	Let CompanyIconHeaderTop.Visible = true																																	'|
+'	PageNumber.Caption = "-Test-"																																						'|
+'End Sub																																																		'|
+'\\--TEST=================================================================================================--//
+
+
+Private Sub refreshSupplierPage()
+	'//--supplierName4.Text = "Supplier For that Icon"--\\
+	If currentPage = 1 Then 'Page 1 Settings
+		'//ICONS===================================
+		Set Icon1.Image = IconAvantek
+		Set Icon2.Image = IconBevelPane
+		Set Icon3.Image = IconCarlF
+		Set Icon4.Image = IconCotswold
+		Set Icon5.Image = IconDGS
+		Set Icon6.Image = IconDistinctionDoors
+		'//SUPPLIER NAMES===========================
+		Let supplierName1.Text = "Avantek"
+		Let supplierName2.Text = "Bevelpane"
+		Let supplierName3.Text = "Carl F"
+		Let supplierName4.Text = "Cotswold"
+		Let supplierName5.Text = "DGS"
+		Let supplierName6.Text = "Distinction Doors"
+	ElseIf currentPage = 2 Then 'Page 2 Settings
+	'//ICONS===================================
+		Set Icon1.Image = IconERA
+		Set Icon2.Image = IconExitex
+		Set Icon3.Image = IconLiniar
+		Set Icon4.Image = IconMaco
+		Set Icon5.Image = IconNWMetal
+		Set Icon6.Image = IconODL
+		'//SUPPLIER NAMES===========================
+		Let supplierName1.Text = "ERA (Fab&Fix)"
+		Let supplierName2.Text = "Exitex"
+		Let supplierName3.Text = "Liniar"
+		Let supplierName4.Text = "Maco"
+		Let supplierName5.Text = "NW Metal"
+		Let supplierName6.Text = "ODL"
+	ElseIf currentPage = 3 Then 'Page 3 Settings
+		'//ICONS===================================
+		Set Icon1.Image = IconPremier
+		Set Icon2.Image = IconRapidrop
+		Set Icon3.Image = IconRehau
+		Set Icon4.Image = IconWindowWare
+		Set Icon5.Image = IconWindowWidgets
+		Set Icon6.Image = IconPressGlass
+		'//SUPPLIER NAMES===========================
+		Let supplierName1.Text = "Premier Arches"
+		Let supplierName2.Text = "Rapidrop"
+		Let supplierName3.Text = "Rehau"
+		Let supplierName4.Text = "Window Ware"
+		Let supplierName5.Text = "Window Widgets"
+		Let supplierName6.Text = "Press Glass"
+
+	End If
+End Sub
+
+
+
+'//--If you click the page arrow at the bottom right--\\
+Private Sub rightArrowButton_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If Not currentPage = 3 Then 'Set Maximum upper limit of pages here
+		currentPage = currentPage + 1
+		PageNumber.Caption = "­Page " & CStr(currentPage) & "­"
+		refreshSupplierPage 'update page icons to reflect current page
+	 End If
+End Sub
+
+'//--If you click the page arrow at the bottom left--\\
+Private Sub leftArrowButton_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If Not currentPage = 1 Then 'Set Maximum lower limit of pages here
+		currentPage = currentPage - 1
+		PageNumber.Caption = "­Page " & CStr(currentPage) & "­"
+		refreshSupplierPage 'update page icons to reflect current page
+	 End If
+End Sub
+
+'//--CLICK ON ICON 1=============================================\\
+'//--ICON 1--\\-_-_-_-_
+Private Sub Icon1_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 1
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 7
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 13
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+'//--ICON 2--\\-_-_-_-_
+Private Sub Icon2_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 2
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 8
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 14
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+'//--ICON 3--\\-_-_-_-_
+Private Sub Icon3_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 3
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 9
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 15
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+'//--ICON 4--\\-_-_-_-_
+Private Sub Icon4_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 4
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 10
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 16
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+'//--ICON 5--\\-_-_-_-_
+Private Sub Icon5_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 5
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 11
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 17
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+'//--ICON 6--\\-_-_-_-_
+Private Sub Icon6_PenDown(ByVal x As Integer, ByVal y As Integer)
+	If currentPage = 1 Then
+		selectedCompanyID = 6
+	ElseIf currentPage = 2 Then
+		selectedCompanyID = 12
+	ElseIf currentPage =3 Then
+		selectedCompanyID = 18
+	End If
+	'//--Finish selections and launch supplier window--\\
+	dim supplierWindow as new SupplierScreen					'|
+  supplierWindow.Show hbFormModeless+hbFormGoto			'|
+	'\\------------------------------------------------//
+End Sub
+
+
+Private Sub aboutButton_Click()
+'//--Launch About Screen--\\
+	dim aboutWindow as new aboutScreen
+  aboutWindow.Show hbFormModeless+hbFormGoto
+End Sub

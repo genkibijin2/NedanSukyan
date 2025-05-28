@@ -1,0 +1,42 @@
+' Peter Holmes Consulting HB++ Class file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin Class
+  Name = clsApplication
+  Segment = main
+  Extends = Application
+  Instantiable = True
+  Extendable = False
+  Clonable = False
+end
+Public Const sFileExtension as String = "foo" ' TODO: replace this with your own file extention
+
+Private Sub Application_NormalLaunch()
+  dim f as new launchScreen
+
+  f.Show hbFormModeless+hbFormGoto
+End Sub
+
+Private Sub Application_GotoItem(ByVal objItem As ItemInfo)
+  dim f as new launchScreen
+
+  f.Show hbFormModeless+hbFormGoto
+End Sub
+
+Private Sub Application_SyncNotify()
+	RegisterExtension sFileExtension
+End Sub
+
+Private Sub Application_ExgAskUser(ByVal sFilename As String, ByRef eResult As HbExgAsk)
+	eResult=hbExgAskDialog
+End Sub
+
+Private Sub Application_ExgReceive(ByVal objStream As StreamExg, ByRef objItem As ItemInfo)
+	Dim data as Integer
+
+	Read objStream, data
+
+	Set objItem = new ItemInfo
+	objItem.RecordNum = data
+End Sub
