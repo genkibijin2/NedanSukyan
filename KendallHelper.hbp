@@ -1,0 +1,679 @@
+' Peter Holmes Consulting HB++ Project file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin Project
+  Name = KendallHelper
+  Configuration = Debug
+  Conduit = ""
+  Package = ""
+  File = "..\\..\\..\\..\\..\\Program Files\\HB++\\MyProject\\clsApplication.hbc"
+  File = "..\\..\\..\\..\\..\\Program Files\\HB++\\MyProject\\launchScreen.hbf"
+  File = "SupplierScreen.hbf"
+  File = "companyIdHelper.hbm"
+  File = "aboutScreen.hbf"
+  begin Configuration
+    Name = Debug
+    Title = "PriceListsPortable"
+    Version = "1.0"
+    Icon = ""
+    SmallIcon = ""
+    MinOSVersion = 30
+    Locale = 1033
+    Database = "KendallHelper"
+    Creator = "BYE2"
+    Type = "appl"
+    Beamable = True
+    Backup = False
+    Reset = False
+    Hidden = False
+    Const = "DEBUG"
+    Optimize = 0
+    Debug = True
+    CheckNull = True
+    CheckArray = True
+    CheckFPU = True
+  end
+  begin Configuration
+    Name = Release
+    Title = "KendallHelper"
+    Version = "1.0"
+    Icon = ""
+    SmallIcon = ""
+    MinOSVersion = 30
+    Locale = 1033
+    Database = "KendallHelper"
+    Creator = "BYE2"
+    Type = "appl"
+    Beamable = True
+    Backup = False
+    Reset = False
+    Hidden = False
+    Const = "NDEBUG"
+    Optimize = 1
+    Debug = False
+    CheckNull = False
+    CheckArray = False
+    CheckFPU = False
+  end
+  begin ImageFamily
+    Name = HeaderMimi
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\MimiHeaderNedanScan.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = HeaderMimiLauncher
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\MimiHeaderPriceLists.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconExitex
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_exitex.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconLiniar
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_liniar.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconODL
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_ODL.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconPremier
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_premierarches.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconRehau
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_rehau.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconWindowWare
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_windowware.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconCarlF
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_carlF.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconERA
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_ERAFabAndFix.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconMaco
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_maco.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconWindowWidgets
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_windowwidgets.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconDistinctionDoors
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_distinctiondoors.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconDGS
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_dgs.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconBevelPane
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_bevelpane.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconRapidrop
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_rapiddrop.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconCotswold
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_cotswold.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconAvantek
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_avantek.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconNWMetal
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_NWMetal.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = HeaderMimiSmall
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\MimiHeaderNedanScanSmaller.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = pageArrowRight
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\pageArrowright.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = pageArrowLeft
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\pageArrowLeft.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconPressGlass
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\Icon_pressglass.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconLoading
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\LOADING.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = IconDoneLoad
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\DONELOAD.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = HeaderAboutScreen
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\InfoPageHeader.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame1.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame2
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame2.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame3
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame3.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame4
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame4.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame5
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame5.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame6
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame6.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame7
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame7.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame8
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame8.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame9
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame9.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame10
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame10.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame11
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame12.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame12
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame12.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame13
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame13.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame14
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame14.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame15
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame15.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame16
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame16.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame17
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame17.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame18
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame18.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame19
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame19.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame20
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame20.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame21
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame21.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame22
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame22.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame23
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame23.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame24
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame24.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame25
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame25.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame26
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame26.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame27
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame27.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame28
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame28.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame29
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame29.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame30
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame30.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame31
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame31.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame32
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame32.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame33
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame33.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame34
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame34.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame35
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame35.bmp"
+    end
+  end
+  begin ImageFamily
+    Name = animationFrame36
+    begin Image
+      Density = 72
+      Palette = 0
+      Compression = 255
+      TransparencyColor = -1
+      Filename = "..\\Mimi\\animFrame36.bmp"
+    end
+  end
+end

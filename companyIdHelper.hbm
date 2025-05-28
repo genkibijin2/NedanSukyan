@@ -1,0 +1,16 @@
+' Peter Holmes Consulting HB++ Module file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin Module
+  Name = publicVariables
+  Segment = main
+end
+'//===============PUBLIC VARIABLES====================\\
+'-The following variables are used between screens,
+' and should be written here. This retains their value
+' in memory between launching of forms.
+'------------------------------------------------------
+
+public Dim selectedCompanyID As Integer
+public Dim currentPage As Integer

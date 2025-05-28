@@ -1,0 +1,225 @@
+' Peter Holmes Consulting HB++ Form file
+' Version 1.05.973.1309
+' *** DO NOT EDIT ***
+
+begin Form
+  Name = aboutScreen
+  Segment = main
+  Extends = Form
+  Left = 0
+  Top = 0
+  Width = 160
+  Height = 160
+  DIA = 0
+  Modal = False
+  SaveBehind = False
+  Caption = "PLP - Info Page"
+  Help = ""
+  Locked = False
+  begin Picture
+    Name = aboutScreenHeader
+    Left = 0
+    Top = 15
+    Anchors = 0
+    Visible = True
+    Image = "HeaderAboutScreen"
+    Tag = ""
+  end
+  begin Label
+    Name = topLabel
+    Left = 110
+    Top = 1
+    Anchors = 0
+    Visible = True
+    Caption = "© GenkiBijin"
+    Font = "Standard"
+    Tag = ""
+  end
+  begin Field
+    Name = infoBox
+    Left = 81
+    Top = 53
+    Width = 78
+    Height = 89
+    Anchors = 0
+    Visible = True
+    Font = "Standard"
+    Editable = False
+    Underline = False
+    SingleLine = False
+    AutoShift = True
+    Numeric = False
+    MaxChar = 80
+    Align = 0
+    Scrollbar = "infoScroll"
+    Tag = ""
+  end
+  begin Scrollbar
+    Name = infoScroll
+    Left = 72
+    Top = 54
+    Width = 7
+    Height = 90
+    Anchors = 0
+    Visible = True
+    Min = 0
+    Max = 100
+    LargeChange = 10
+    Tag = ""
+  end
+  begin Graffiti
+    Name = Graffiti1
+    Left = 2
+    Top = 148
+    Anchors = 0
+    Tag = ""
+  end
+  begin Button
+    Name = returnButton
+    Left = 82
+    Top = 148
+    Width = 75
+    Height = 9
+    Anchors = 0
+    Visible = True
+    Text = "Return Home"
+    Font = "Standard"
+    Frame = 1
+    Repeating = False
+    Tag = ""
+  end
+  begin Picture
+    Name = animationBox
+    Left = 2
+    Top = 57
+    Anchors = 0
+    Visible = True
+    Image = "animationFrame"
+    Tag = ""
+  end
+  begin Button
+    Name = spinner
+    Left = 23
+    Top = 148
+    Width = 26
+    Height = 9
+    Anchors = 0
+    Visible = False
+    Text = "Spin"
+    Font = "Standard"
+    Frame = 1
+    Repeating = False
+    Tag = ""
+  end
+end
+'//=======================INFO PAGE========================\\
+Private animationTimer as New Timer
+'New timer for delaying an animation that will play, so that it can play after the form loads automatically.
+'Private intervalCount as Integer
+'Counts each step of the timer
+
+Private Sub Form_Load()
+	animationTimer.Interval = 200
+	animationTimer.Enabled = true
+	infoBox.Text = "A collection of companies that supply parts and materials to us at Euroglaze. This program is designed to be a useful way for me to keep track of the different methods required to price check any invoices, as it's portable and on my desk.\nIt offers the suppliers locational data, and then the various individual steps I need to take to check their invoices.\nIt also functions as a way for me to master VB and Handheld basic.\nMy name's Kendall Price and I made this in 2025...\nhttps://\nkendalls.garden\n\n\n\n"
+End Sub
+
+Private Sub returnButton_Click()
+	dim f as new launchScreen
+  f.Show hbFormModeless+hbFormGoto
+End Sub
+
+Private Sub Form_Unload()
+	animationTimer.Enabled = false
+End Sub
+
+Private Sub animationTimer_Timer()
+	animationTimer.Interval = 100000
+	playAnimation
+End Sub
+
+Private Sub playAnimation()
+		Dim frameInterval As Integer
+		frameInterval = 30
+		Dim gifLoops As Integer
+			'//===EXCESSIVELY BULKY AND UNOPTIMIZED ANIMATION=====\\
+			For gifLoops = 1 To 3
+					Set animationBox.Image = animationFrame2
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame3
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame4
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame5
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame6
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame7
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame8
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame9
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame10
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame11
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame12
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame13
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame14
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame15
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame16
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame17
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame18
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame19
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame20
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame21
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame22
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame23
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame24
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame25
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame26
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame27
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame28
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame29
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame30
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame31
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame32
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame33
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame34
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame35
+					Sleep(frameInterval)
+					Set animationBox.Image = animationFrame36
+					Sleep(frameInterval)
+			Next gifLoops
+			animationTimer.Enabled = false
+			spinner.Visible = true
+End Sub
+'\\========================================================//
+
+Private Sub spinner_Click()
+	playAnimation
+End Sub
