@@ -1,5 +1,4 @@
-# NedanSukyan
-Portable Invoice Price List Helper for IBM Palm Pilot/PalmOS 3.0</b>
+# NedanSukyan - Portable Invoice Price List Helper for IBM Palm Pilot/PalmOS 3.0<br />
 ================================================================
 In my attempt to learn VB/VBA/HB, I've been developing this app for Palm OS 3.0 in "HB++". It is designed to function as portable application that can tell me exactly which steps I must take to check invoices for certain suppliers.<br />
 I often find myself having to check which actions are appropriate for invoice checking, depending on the supplier. A lot of my notes on the differences between steps are held in my palm pilot, among other scattered notes; I thought it would be useful to combine VB learning with an application that would clean up my messy virtual sticky-notes.
